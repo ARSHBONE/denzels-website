@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar Example</title>
+    <title>Marunda Designs - Premium Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -11,291 +12,494 @@
             padding: 0;
             font-family: 'Kumbh Sans', sans-serif;
         }
-      
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
 
         /* Sticky Navbar Styling */
-    .navbar {
-      position: sticky;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: black;
-      padding: 10px 20px;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      font-size: 1.2rem;
-      justify-content: center;
-      height: 80px;
-    }
-    .navbar__container {
-             display: flex;
-             justify-content: space-between;
-             align-items: center;
-             height: 80px;
-             z-index: 1;
-             width: 100%;
-             max-width: 1300px;
-             margin: 0 auto;
-             padding: 0 50px;
-             height: 80px;
-         }
-         .signup__button {
-             background-color: #ff8177;
-             color: white;
-             border: none;
-             padding: 8px 16px;
-             border-radius: 4px;
-             font-size: 1rem;
-             cursor: pointer;
-             transition: background 0.3s ease;
-             text-decoration: none;
-         }
- 
-         .signup__button:hover {
-             background-color: #ff0844;
-         }
- 
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 10px 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            justify-content: center;
+            height: 80px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+        
+        .signup__button {
+            background: linear-gradient(to right, #ff8177, #ffb199);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 129, 119, 0.3);
+        }
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .navbar ul li {
-      display: inline;
-    }
-
-    .navbar ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    #navbar__logo {
-             background-image: linear-gradient(#ff0844 0%, #ffb199 100%);
-             background-size: 100%;
-             -webkit-background-clip: text;
-             -moz-background-clip: text;
-             -webkit-text-fill-color: transparent;
-             -moz-text-fill-color: transparent;
-             display: flex;
-             align-items: center;
-             cursor: pointer;
-             text-decoration: none;
-             font-size: 2rem;
-         }
- 
-      
-         .navbar__menu {
-             display: flex;
-             gap: 20px;
-         }
- 
-         .navbar__item a {
-             color: white;
-             text-decoration: none;
-             transition: color 0.3s ease;
-         }
- 
-         .navbar__item a:hover {
-             color: #ff8177;
-         }
-
-    .navbar ul li a:hover {
-      color: #ffcc00;
-    }
-    .menu-icon {
-             display: none;
-             font-size: 2rem;
-             cursor: pointer;
-             color: white;
-         }
- 
         .signup__button:hover {
-            background-color: #ff0844;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 129, 119, 0.4);
         }
-        .start-image{
-          width: 1469px;
-          height: 400px;
-          max-width:100% ;
-          
 
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
         }
-        .rectangle {
-      width: 100%;
-      max-width: 1469px;
-      padding: 30px;
-      background-color: #f2f2f2;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-   
-    .footer {
-    background-color: #000;
-    color: white;
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-}
 
-.footer__container {
-    max-width: 1200px;
-    margin: 0 auto;
-    height:300px;
-}
+        .navbar ul li {
+            display: inline;
+        }
 
-.footer__links {
-    margin-top: 10px;
-}
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        #navbar__logo {
+            background-image: linear-gradient(#ff8177 0%, #ffb199 100%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
 
-.footer__links a {
-    color: #ff8177;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+        .navbar__menu {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
 
-.footer__links a:hover {
-    color: #ff0844;
-}
-html {
-    scroll-behavior: smooth;
-}
-.scrolling-gallery {
-    overflow: hidden;
-    width: 100%;
-    background: #fff;
-    padding: 20px 0;
-    margin-top: 30px;
-}
+        .navbar__item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
 
-.scrolling-images {
-    display: flex;
-    gap: 30px;
-    animation: scrollImages 40s linear infinite;
-    width: max-content;
-}
+        .navbar__item a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(to right, #ff8177, #ffb199);
+            transition: width 0.3s ease;
+        }
 
-.scrolling-images img {
-    height: 300px;
-    width: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+        .navbar__item a:hover:after {
+            width: 100%;
+        }
 
-@keyframes scrollImages {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+        .navbar__item a:hover {
+            color: #ffb199;
+        }
 
-/* Optional: Make it reverse on hover */
-.scrolling-images:hover {
-    animation-play-state: paused;
-}
-.gallery-gallery {
-    width: 100%;
-    overflow: hidden;
-    padding: 30px 0;
-    background-color: #f9f9f9;
-    cursor: grab;
-}
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
 
-.gallery-container {
-    display: flex;
-    gap: 5px;
-    padding: 0 30px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    cursor: grab;
-}
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        .hero-content {
+            position: absolute;
+            text-align: center;
+            color: white;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-button {
+            background: linear-gradient(to right, #ff8177, #ffb199);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 129, 119, 0.3);
+        }
+        
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 129, 119, 0.4);
+        }
 
-.drag-container img {
-    height: 600px;
-    width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    user-select: none;
-    pointer-events: none;
-}
+        /* Featured Section */
+        .featured-section {
+            padding: 80px 0;
+            text-align: center;
+            background-color: white;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #ff8177, #ffb199);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
 
-.item {
-    display: flex;
-    flex-direction: column;
-   padding: 0 10px;
-   scroll-behavior: smooth;
-  
-}
-
-
-.item img {
-    width: 400px;
-    height: 600px;
-    border-radius: 10px;
-    object-fit:cover;
-    gap:initial;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    user-select:none;
-    pointer-events:none;
-
-    
-}
-
-.price {
-    margin-top: 5px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #ff8177;
-    background-color: #fff;
-    padding: 6px 12px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    
-}
-@media screen and (max-width: 768px) {
-             .menu-icon {
-                 display: block;
-             }
- 
-             .navbar__menu {
-                 display: none;
-                 flex-direction: column;
-                 background-color: black;
-                 width: 100%;
-                 position: absolute;
-                 top: 80px;
-                 left: 0;
-                 padding: 20px;
-             }
- 
-             .navbar__menu.show {
-                 display: flex;
-             }
- 
-             .dropdown-content {
-                 position: static;
-                 box-shadow: none;
-                 display: none;
-                 padding-left: 10px;
-             }
- 
-             .dropdown.show .dropdown-content {
-                 display: flex;
-                 flex-direction: column;
-             }
- 
-             .dropdown:hover .dropdown-content {
-                 display: none;
-             }
-         }
- 
-
-
-  
+        /* Scrolling Gallery */
+        .scrolling-gallery {
+            overflow: hidden;
+            width: 100%;
+            background: #fff;
+            padding: 40px 0;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .scrolling-images {
+            display: flex;
+            gap: 30px;
+            animation: scrollImages 40s linear infinite;
+            width: max-content;
+        }
+        
+        .scrolling-images img {
+            height: 300px;
+            width: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .scrolling-images img:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes scrollImages {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Product Gallery */
+        .product-gallery {
+            padding: 80px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .gallery-container {
+            display: flex;
+            gap: 30px;
+            padding: 0 30px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            cursor: grab;
+            padding-bottom: 20px;
+        }
+        
+        .gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .gallery-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: linear-gradient(to right, #ff8177, #ffb199);
+            border-radius: 10px;
+        }
+        
+        .item {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 300px;
+            flex-shrink: 0;
+        }
+        
+        .item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .item img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .item-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .item-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff8177;
+            background-color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(to right, #2c2c2c, #000);
+            color: white;
+            padding: 60px 20px 30px;
+            margin-top: 50px;
+        }
+        
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer__column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #ffb199;
+        }
+        
+        .footer__column p, .footer__column a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer__column a:hover {
+            color: #ff8177;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #ff8177;
+            transform: translateY(-3px);
+        }
+        
+        .footer__bottom {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 968px) {
+            .navbar__container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            
+            .navbar__menu {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+                width: 100%;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                padding: 20px;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .navbar__menu.show {
+                display: flex;
+            }
+            
+            .hero {
+                height: 60vh;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .gallery-container {
+                gap: 20px;
+                padding: 0 15px;
+            }
+            
+            .item {
+                min-width: 250px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer__container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -306,120 +510,245 @@ html {
             <div class="menu-icon" onclick="toggleMenu()">☰</div>
             <div class="navbar__menu" id="navbarMenu">
                 <div class="navbar__item"><a href="#">Home</a></div>
-                <div class="navbar__item"><a href="#footer">About</a></div>
-                <div class="navbar__item"><a href="tech.html">collections</a></div>
+                <div class="navbar__item"><a href="#about">About</a></div>
+                <div class="navbar__item"><a href="#collections">Collections</a></div>
                 <div class="navbar__item"><a href="#footer">Contact</a></div>
-                <a href="#" class="signup__button">ORDER</a>
+                <a href="#" class="signup__button">ORDER NOW</a>
             </div>
         </div>
     </nav>
 
-   
-    
- <!-- Image Section -->
-
- <img src="marunda.png"class="start-image ">
-
-
- <!--rectangle section-->
- <div class="rectangle">marunda design</div> 
-
- <!--image section -->
-
- <div class="scrolling-gallery">
-    <div class="scrolling-images">
-        <img src="image 0.jpeg" alt="Gallery image 0">
-        <img src="image 1.jpeg" alt="Gallery image 1">
-        <img src="image 2.jpeg" alt="Gallery image 2">
-        <img src="image 3.jpeg" alt="Gallery image 3">
-        <img src="image 4.jpeg" alt="Gallery image 4">
-        <img src="image 5.jpeg" alt="Gallery image 5">
-        <img src="image 6.jpeg" alt="Gallery image 6">
-        <img src="image 7.jpeg" alt="Gallery image 7">
-    </div>
-</div>
-
-
-<!-- Drag-to-Scroll Image Gallery with Prices -->
-<div class="drag-gallery">
-    <div class="gallery-container" id="dragcontainer">
-        <div class="item">
-            <img src="image 0.jpeg" alt="Image 0">
-            <p class="price">$29.99</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="marunda.png" alt="Marunda Designs" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">ELEVATE YOUR STYLE</h1>
+            <p class="hero-subtitle">Discover our exclusive collection of premium fashion designs</p>
+            <a href="#collections" class="hero-button">SHOP NOW</a>
         </div>
-        <div class="item">
-            <img src="image 1.jpeg" alt="Image 1">
-            <p class="price">$45.00</p>
-        </div>
-        <div class="item">
-            <img src="image 2.jpeg" alt="Image 2">
-            <p class="price">$18.50</p>
-        </div>
-        <div class="item">
-            <img src="image 3.jpeg" alt="Image 3">
-            <p class="price">$35.75</p>
-        </div>
-        <div class="item">
-            <img src="image 4.jpeg" alt="Image 4">
-            <p class="price">$22.00</p>
-        </div>
-        <div class="item">
-            <img src="image 5.jpeg" alt="Image 5">
-            <p class="price">$39.95</p>
-        </div>
-        <div class="item">
-            <img src="image 6.jpeg" alt="Image 6">
-            <p class="price">$27.49</p>
-        </div>
-        <div class="item">
-            <img src="image 7.jpeg" alt="Image 7">
-            <p class="price">$50.00</p>
-        </div>
-    </div>
-</div>
+    </section>
 
-
- 
-
-<!--footer section-->
- <footer id="footer" class="footer">
-    <div class="footer__container">
-        <p class="footer__text">© 2025 Marunda Designs</p>
-        <p style ="float:left;" class="footer__text">All rights reserved.</p>
-        <div class="footer__links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact Us</a>
+    <!-- Featured Section -->
+    <section class="featured-section">
+        <h2 class="section-title">FEATURED COLLECTIONS</h2>
+        
+        <div class="scrolling-gallery">
+            <div class="scrolling-images">
+                <img src="image 0.jpeg" alt="Gallery image 0">
+                <img src="image 1.jpeg" alt="Gallery image 1">
+                <img src="image 2.jpeg" alt="Gallery image 2">
+                <img src="image 3.jpeg" alt="Gallery image 3">
+                <img src="image 4.jpeg" alt="Gallery image 4">
+                <img src="image 5.jpeg" alt="Gallery image 5">
+                <img src="image 6.jpeg" alt="Gallery image 6">
+                <img src="image 7.jpeg" alt="Gallery image 7">
+            </div>
         </div>
-    </div>
-</footer>
-<script>
-  function toggleMenu() {
-      const menu = document.getElementById('navbarMenu');
-      menu.classList.toggle('show');
-  }
+    </section>
 
-  function toggleDropdown(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      if (window.innerWidth <= 768) {
-          const dropdown = event.currentTarget;
-          dropdown.classList.toggle('show');
-      }
-  }
+    <!-- Product Gallery -->
+    <section class="product-gallery" id="collections">
+        <h2 class="section-title">BEST SELLERS</h2>
+        
+        <div class="gallery-container" id="dragcontainer">
+            <div class="item">
+                <img src="image 0.jpeg" alt="Image 0">
+                <div class="item-info">
+                    <h3 class="item-title">Elegant Evening Dress</h3>
+                    <p class="price">$29.99</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image 1.jpeg" alt="Image 1">
+                <div class="item-info">
+                    <h3 class="item-title">Classic Business Suit</h3>
+                    <p class="price">$45.00</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image 2.jpeg" alt="Image 2">
+                <div class="item-info">
+                    <h3 class="item-title">Casual Summer Outfit</h3>
+                    <p class="price">$18.50</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image 3.jpeg" alt="Image 3">
+                <div class="item-info">
+                    <h3 class="item-title">Designer Jacket</h3>
+                    <p class="price">$35.75</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image 4.jpeg" alt="Image 4">
+                <div class="item-info">
+                    <h3 class="item-title">Trendy Streetwear</h3>
+                    <p class="price">$22.00</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image 5.jpeg" alt="Image 5">
+                <div class="item-info">
+                    <h3 class="item-title">Formal Attire</h3>
+                    <p class="price">$39.95</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image 6.jpeg" alt="Image 6">
+                <div class="item-info">
+                    <h3 class="item-title">Party Dress</h3>
+                    <p class="price">$27.49</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image 7.jpeg" alt="Image 7">
+                <div class="item-info">
+                    <h3 class="item-title">Luxury Gown</h3>
+                    <p class="price">$50.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  window.onclick = function(e) {
-      const dropdowns = document.querySelectorAll('.dropdown');
-      dropdowns.forEach(drop => {
-          if (!drop.contains(e.target)) {
-              drop.classList.remove('show');
-          }
-      });
-  }
-</script>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2 class="section-title">ABOUT MARUNDA DESIGNS</h2>
+        <div class="about-content">
+            <p class="about-text">
+                Marunda Designs is a premium fashion brand dedicated to creating unique, high-quality clothing that combines contemporary style with timeless elegance. Our designs are crafted with attention to detail, using only the finest materials to ensure comfort, durability, and exceptional fit.
+            </p>
+            <p class="about-text">
+                Founded with a passion for fashion and a commitment to sustainability, we strive to make a positive impact on both our customers and the environment. Each piece in our collection tells a story of craftsmanship, innovation, and artistic expression.
+            </p>
+            <a href="#" class="signup__button">LEARN MORE</a>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="footer__container">
+            <div class="footer__column">
+                <h3>MARUNDA DESIGNS</h3>
+                <p>Elevating fashion with unique designs and premium quality since 2020.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer__column">
+                <h3>QUICK LINKS</h3>
+                <a href="#">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#collections">Collections</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">Sale</a>
+            </div>
+            <div class="footer__column">
+                <h3>CUSTOMER SERVICE</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">Shipping Information</a>
+                <a href="#">Returns & Exchanges</a>
+                <a href="#">Size Guide</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer__column">
+                <h3>CONTACT INFO</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, New York, NY</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@marundadesigns.com</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2025 Marunda Designs. All rights reserved.</p>
+            <div class="footer__links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('show');
+        }
 
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const menu = document.getElementById('navbarMenu');
+                    if (menu.classList.contains('show')) {
+                        menu.classList.remove('show');
+                    }
+                }
+            });
+        });
+
+        // Drag scrolling for gallery
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        const slider = document.querySelector('.gallery-container');
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events for mobile
+        slider.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        slider.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+    </script>
 
 </body>
 </html>
