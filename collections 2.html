@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Marunda Designs - Collections</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- ✅ Firebase Core SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <!-- ✅ Firebase Realtime Database -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
   <style>
     :root {
       --primary-color: #ff8177;
@@ -792,65 +796,128 @@
       measurementId: "G-C51V3BS8MF"
     };
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const database = firebase.database();
+   // ✅ Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
 
-    // Initialize session-based user ID
-    const userId = localStorage.getItem("sessionUserId") || (() => {
-      const newId = 'user_' + Math.random().toString(36).substr(2, 9);
-      localStorage.setItem("sessionUserId", newId);
-      return newId;
-    })();
+// ✅ Initialize session-based user ID
+const userId = localStorage.getItem("sessionUserId") || (() => {
+  const newId = 'user_' + Math.random().toString(36).substr(2, 9);
+  localStorage.setItem("sessionUserId", newId);
+  return newId;
+})();
 
-    // Shopping cart functionality
-    let cart = [];
-    const cartContainer = document.getElementById('cart-container');
-    const cartIcon = document.getElementById('cart-icon');
-    const cartCount = document.getElementById('cart-count');
-    const cartItems = document.getElementById('cart-items');
-    const cartTotal = document.getElementById('cart-total');
-    const closeCart = document.getElementById('close-cart');
-    const checkoutBtn = document.getElementById('checkout-btn');
+// ✅ Shopping cart functionality
+let cart = [];
+const cartContainer = document.getElementById('cart-container');
+const cartIcon = document.getElementById('cart-icon');
+const cartCount = document.getElementById('cart-count');
+const cartItems = document.getElementById('cart-items');
+const cartTotal = document.getElementById('cart-total');
+const closeCart = document.getElementById('close-cart');
+const checkoutBtn = document.getElementById('checkout-btn');
 
-    // Toggle cart visibility
-    cartIcon.addEventListener('click', () => {
-      cartContainer.classList.toggle('show');
+// Toggle cart visibility
+cartIcon.addEventListener('click', () => {
+  cartContainer.classList.toggle('show');
+});
+
+closeCart.addEventListener('click', () => {
+  cartContainer.classList.remove('show');
+});
+
+// Format currency
+function formatKSh(amount) {
+  return 'KSh ' + amount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Update cart UI
+function updateCartUI() {
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  cartCount.textContent = totalItems;
+  cartItems.innerHTML = '';
+  let totalPrice = 0;
+
+  cart.forEach((item, index) => {
+    const itemTotal = item.price * item.quantity;
+    totalPrice += itemTotal;
+
+    const itemElement = document.createElement('div');
+    itemElement.className = 'cart-item';
+    itemElement.innerHTML = `
+      <img src="${item.image}" alt="${item.name}">
+      <div class="cart-item-info">
+        <div>${item.name}</div>
+        <div>${item.quantity} × ${formatKSh(item.price)}</div>
+      </div>
+      <div class="cart-item-price">${formatKSh(itemTotal)}</div>
+      <span class="remove-item" data-index="${index}"><i class="fas fa-times"></i></span>
+    `;
+    cartItems.appendChild(itemElement);
+  });
+
+  cartTotal.textContent = formatKSh(totalPrice);
+
+  // Remove item from cart
+  document.querySelectorAll('.remove-item').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const index = e.currentTarget.getAttribute('data-index');
+      cart.splice(index, 1);
+      updateCartUI();
     });
-    
-    closeCart.addEventListener('click', () => {
-      cartContainer.classList.remove('show');
-    });
+  });
+}
 
-    // Format currency
-    function formatKSh(amount) {
-      return 'KSh ' + amount.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
+// ✅ Function to load products dynamically
+function loadProducts(sectionId) {
+  const productGallery = document.querySelector(`#section${sectionId} .product-gallery`);
+  productGallery.innerHTML = '';
 
-    // Update cart UI
-    function updateCartUI() {
-      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-      cartCount.textContent = totalItems;
-      cartItems.innerHTML = '';
-      let totalPrice = 0;
+  database.ref(`galleries/section${sectionId}/products`).once('value')
+    .then(snapshot => {
+      if (!snapshot.exists()) {
+        productGallery.innerHTML = '<p>No products found.</p>';
+        return;
+      }
 
-      cart.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        totalPrice += itemTotal;
+      snapshot.forEach(childSnapshot => {
+        const product = childSnapshot.val();
+        const name = product.name || 'Unnamed Product';
+        const price = product.price || 0;
+        const image = product.image || 'https://via.placeholder.com/350x350?text=No+Image';
 
-        const itemElement = document.createElement('div');
-        itemElement.className = 'cart-item';
-        itemElement.innerHTML = `
-          <img src="${item.image}" alt="${item.name}">
-          <div class="cart-item-info">
-            <div>${item.name}</div>
-            <div>${item.quantity} × ${formatKSh(item.price)}</div>
-          </div>
-          <div class="cart-item-price">${formatKSh(itemTotal)}</div>
-          <span class="remove-item" data-index="${index}"><i class="fas fa-times"></i></span>
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card';
+        productCard.innerHTML = `
+          <img src="${image}" alt="${name}">
+          <h4>${name}</h4>
+          <p>Price: ${formatKSh(price)}</p>
+          <button class="buy-btn">Add to Cart</button>
         `;
-        cartItems.appendChild(itemElement);
+
+        // ✅ Add to cart when clicked
+        productCard.querySelector('.buy-btn').addEventListener('click', () => {
+          const existingItem = cart.find(item => item.name === name);
+          if (existingItem) {
+            existingItem.quantity++;
+          } else {
+            cart.push({ name, price, image, quantity: 1 });
+          }
+          updateCartUI();
+        });
+
+        productGallery.appendChild(productCard);
       });
+    })
+    .catch(error => {
+      console.error("Error loading products:", error);
+      productGallery.innerHTML = '<p>Error loading products.</p>';
+    });
+}
+
+// ✅ Load products for your sections
+loadProducts(2); // trousers
+loadProducts(3); // tops
 
       cartTotal.textContent = `Total: ${formatKSh(totalPrice)}`;
 
@@ -1007,7 +1074,6 @@
     }
   </script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+ 
 </body>
 </html>
